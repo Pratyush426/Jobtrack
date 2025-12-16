@@ -1,9 +1,0 @@
-1. so basically i first created the basic : node_moduels, which installed packege.json
-    then i did the package-lock.json through npm
-2. then i created 2 files: 1. index.js in the root repo
-    and views/index.ejs: for the codes
-3. now i followed the google auth 2.0 process to call gmal.api just to readonly mode
-4. then i followed the list gmail messages and added 2 more functions in index.ejs:
-    async function listMessages() and async function getMessage(messageId) and updated the handleAuthClick()
-    to now read my recent gmail messages and added this line:  await listMessages();
-5. now i can see my gmails on the website-lit!!
