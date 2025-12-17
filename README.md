@@ -18,16 +18,16 @@ JobTrackr uses an **Event-Driven Architecture** to ensure the User Interface rem
 
 ```mermaid
 graph TD
-    User[User] -->|Connects Gmail| Client[frontend (React/Vite)]
-    Client -->|Sync Request| API[Backend API (Express)]
+    User[User] -->|Connects Gmail| Client["frontend (React/Vite)"]
+    Client -->|Sync Request| API["Backend API (Express)"]
     
     subgraph Data_Pipeline [Async Data Pipeline]
-        API -->|1. Add Job| Queue[Redis Queue (BullMQ)]
-        Queue -->|2. Process Job| Worker[Worker Service (Node.js)]
+        API -->|1. Add Job| Queue["Redis Queue (BullMQ)"]
+        Queue -->|2. Process Job| Worker["Worker Service (Node.js)"]
     end
     
     subgraph AI_Engine [Intelligence Layer]
-        Worker -->|3. Extract Data| LLM[Google Gemini / Groq]
+        Worker -->|3. Extract Data| LLM["Google Gemini / Groq"]
         LLM -->|4. JSON Output| Worker
     end
     
